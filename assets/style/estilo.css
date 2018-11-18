@@ -1,0 +1,64 @@
+body{
+    background-color: rgb(78, 76, 76) !important;
+    color: white !important;
+}
+
+
+img{
+    width: 125px;
+    height:150px;
+}
+
+
+#adminPanel{
+    
+    padding: 2%;
+    background-color: rgb(78, 76, 76);
+    
+}
+    #adminPanel .btn{
+        color: white !important;
+        font-weight: 500;
+    }
+#logout{
+    float: right;
+    font-weight: 500;
+}
+@media screen and (max-width: 459px){
+    #logout{
+        float: left;
+        margin-top: 5% !important;
+    }
+}
+
+.tableButtons{
+    margin-left: 0.5%;
+}
+
+#footer{
+    color: white;
+}
+
+#login{
+    color: white;
+}
+
+.error{
+    color: red;
+}
+
+/* REALIZO EL ESTILO PARA MOSTRAR OCULTAR LAS TABLAS */
+#tableMovies{
+    position: relative !important;
+    top: 5% !important;
+}
+#tablePlaces{
+    position: relative !important;
+    top: 5% !important;
+    display: none;
+}
+#tableLocations{
+    position: relative !important;
+    top: 5% !important;
+    display: none;
+}
