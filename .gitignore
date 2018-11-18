@@ -14,7 +14,7 @@ composer.lock
 /tests/
 /assets/img/
 /assets/images/
-/application/config/database.php
+#/application/config/database.php
 
 
 /vendor/
