@@ -1,17 +1,13 @@
 <?php 
-    print_r($this->session->userdata);
-    print_r(time());
- 
-    print_r($this->session->userdata);
-    print_r(time());
-?>
+   
 
-    
+echo('    
 <div class="container-fluid" id="login"> 
     <div class="row">
     <div class="col-md-4"></div> 
          <div class="col-md-4">
-            <?php
+    ');
+echo("<script> peticionHttp = new XMLHttpRequest();</script>");
     echo("
         <h4 class='text-center'>Formulario de Login</h4>");
         if(isset($msg)) echo $msg;
@@ -19,7 +15,8 @@
         echo ("<div class='form-group'>");
         echo ("
             Nombre</br>
-            <input type='text' class='form-control' placeholder='Introduce tu nombre' name='nombre' required/>
+            <input type='text' class='form-control' placeholder='Introduce tu nombre' name='nombre' onblur='checkUser();' id='user' required/>
+            <div id='ajax'></div>
             <!--</br>-->");
         echo(" </div>");
 
