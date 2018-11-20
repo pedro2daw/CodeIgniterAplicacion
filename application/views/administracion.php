@@ -1,7 +1,5 @@
 <div class="container-fluid" id="adminPanel">   
 <?php
-print_r($this->session->userdata);
-print_r(time());
     //-----CREO LOS BOTONES PARA OCULTAR-MOSTRAR LAS TABLAS DE ADMINISTRACION DE LA BD--------//
 echo("<div class='row' id='flex'>");
 echo ("<div class='col'>");
