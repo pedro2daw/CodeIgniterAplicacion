@@ -11,12 +11,12 @@
 
 // ------- CARGO LA VISTA DEL FORMULARIO DE INSERCION DE LOCALIZACIONES ------------ //
         public function showInsertar(){
-            //if($this->security_check()){
+            if($this->security_check()){
                 $data["nameMovie"] = $this->modelPeliculas->getName();
                 $data["namePlace"] = $this->modelLugares->getName();
                 $data["nombreVista"] = "insertLocation";
                 $this->load->view('template',$data);
-            //}
+            }
         }
 // ------- CARGO LA VISTA DEL FORMULARIO DE INSERCION DE LOCALIZACIONES ------------ //
 
@@ -24,7 +24,7 @@
 
 // ------------- REALIZO LA INSERCION DE LOCALIZACIONES --------------------------- //
         public function insertLocation(){
-            //if($this->security_check()){
+            if($this->security_check()){
                 $img_name = $this->modelLocalizaciones->checkUpload();
                 $nombre = $this->input->get_post("nombre");
                 $descripcion = $this->input->get_post("descripcion");
@@ -45,7 +45,7 @@
                         $data["nombreVista"] = "administracion";
                         $this->load->view('template', $data);
                     }
-            //}      
+            }      
         }
 // ------------- REALIZO LA INSERCION DE LOCALIZACIONES --------------------------- //
 

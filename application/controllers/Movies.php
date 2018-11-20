@@ -77,11 +77,11 @@
 
 // --------- CARGO LA VISTA DEL FORMULARIO DE MODIFICACION DE PELICULAS ----//
         public function showUpdate($id){
-            //if($this->security_check()){
+            if($this->security_check()){
             $data["nombreVista"] = "updateMovie";
             $data["movieData"]  = $this->modelPeliculas->getOne($id);
             $this->load->view('template', $data);
-            //}
+            }
         }
 // --------- CARGO LA VISTA DEL FORMULARIO DE MODIFICACION DE PELICULAS ----//
 

@@ -13,10 +13,10 @@
 
 // ------- CARGO LA VISTA DEL FORMULARIO DE INSERCION DE LUGARES ------------ //
         public function showInsertar(){
-            //if($this->security_check()){
+            if($this->security_check()){
                 $data["nombreVista"] = "insertPlace";
                 $this->load->view('template',$data);
-            //}
+            }
         }
 // ------- CARGO LA VISTA DEL FORMULARIO DE INSERCION DE LUGARES ------------ //
 
@@ -24,7 +24,7 @@
 
 // ------------- REALIZO LA INSERCION DE LUGARES --------------------------- //
         public function insertPlace(){
-            //if($this->security_check()){
+            if($this->security_check()){
                 $nombre = $this->input->get_post("nombre");
                 $descripcion = $this->input->get_post("descripcion");
                 $longitud = $this->input->get_post("longitud");
@@ -43,7 +43,7 @@
                     $data["nombreVista"] = "administracion";
                     $this->load->view('template', $data);
                 }
-            //}
+            }
         }
 // ------------- REALIZO LA INSERCION DE LUGARES --------------------------- //
 
@@ -51,7 +51,7 @@
 
 // ------------- REALIZO LA ELIMINACION DE LOS LUGARES ----------------------//
         public function deletePlace($id){
-            //if($this->security_check()){
+            if($this->security_check()){
                 $this->load->model('modelLugares');
                 $resultado = $this->modelLugares->deletePlace($id);
                 //var_dump($resultado);
@@ -65,7 +65,7 @@
                 }else{
                     $this->load->view('template', $data);
                 }
-            //}
+            }
         }
 // ------------- REALIZO LA ELIMINACION DE LOS LUGARES ----------------------//
 
