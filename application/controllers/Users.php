@@ -29,7 +29,7 @@
         }
 // ------- COMPRUEBO EL LOGIN REALIZADO -------------------- //
 
-// ***********************************************************//
+// ****************************************************************//
 
 // ------- OBTENGO EL PANEL DE ADMINISTRACION -------------------- //
         public function panelAdministracion() {
@@ -46,11 +46,33 @@
         }
 // ------- OBTENGO EL PANEL DE ADMINISTRACION -------------------- //
 
+// *********************************************************************//
 
+// ------- COMPRUEBO SI EXISTE EL USUARIO CON AJAX -------------------- //
+        public function check_user($user){
+            $data["nombreVista"] = 'login';
+            $this->load->view('template', $data);
+            $this->load->model('modelAjax');
+
+            $check = $this->modelAjax->check_user($user);
+
+                if($check == 1){
+                    $this->output->set_output("1");
+                }else{
+                    $this->output->set_output("0");
+                }   
+        }
+// ------- COMPRUEBO SI EXISTE EL USUARIO CON AJAX -------------------- //
+
+// *********************************************************************//
+
+// ------- DESTRUYO LA SESION DE LA BASE DE DATOS -------------------- //
         public function cerrarSesion() {
             $this->destroy_session();
             $this->index();
         }
+// ------- DESTRUYO LA SESION DE LA BASE DE DATOS -------------------- //
+
 
 } //cierra class Users
 
