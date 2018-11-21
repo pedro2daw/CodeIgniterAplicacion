@@ -36,13 +36,16 @@
                     
                     if ($resultado == -1){
                         echo("<h3>Error al insertar la localizacion</h3>");
-                        $data["nombreVista"] = "insertLocation";
+                        $data["nombreVista"] = "administracion";
+                        $data["table_to_show"] = "tableLocations";
                         $this->load->view('template',$data);
                     }else{                       
+                        echo("<h3>Localización insertada con éxito</h3>");
                         $data["listaPeliculas"] = $this->modelPeliculas->getAll();
                         $data["listaLugares"] = $this->modelLugares->getAll();
                         $data["listaLocalizaciones"] = $this->modelLocalizaciones->getAll();
                         $data["nombreVista"] = "administracion";
+                        $data["table_to_show"] = "tableLocations";
                         $this->load->view('template', $data);
                     }
             }      
@@ -59,10 +62,12 @@
                 $data["listaLugares"] = $this->modelLugares->getAll();
                 $data["listaLocalizaciones"] = $this->modelLocalizaciones->getAll();
                 $data["nombreVista"] = "administracion";
+                $data["table_to_show"] = "tableLocations";
                 if ($resultado == 0){
                     echo("<h3>Error al eliminar la Localizacion</h3>");
                     $this->load->view('template', $data);
                 }else{
+                    echo("<h3>Localización eliminada con éxito</h3>");
                     $this->load->view('template', $data);
                 }
             }
@@ -99,13 +104,15 @@
 
                     if ($resultado == 0){
                         echo("<h3>Error al modificar la localizacion</h3>");
-                        $data["nombreVista"] = "updateMovie";
+                        $data["nombreVista"] = "administracion";
+                        $data["table_to_show"] = "tableLocations";
                         $this->load->view('template',$data);
                     }else{                       
                         $data["listaPeliculas"] = $this->modelPeliculas->getAll();
                         $data["listaLugares"] = $this->modelLugares->getAll();
                         $data["listaLocalizaciones"] = $this->modelLocalizaciones->getAll();
                         $data["nombreVista"] = "administracion";
+                        $data["table_to_show"] = "tableLocations";
                         $this->load->view('template', $data);
                     }  
             }

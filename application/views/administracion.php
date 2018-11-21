@@ -94,8 +94,13 @@ echo ("</div>");
         echo("<br>");
         
         echo anchor('Locations/showInsertar','Insertar Localizacion', 'class="btn btn-success"');// crea el enlace completo <a href>
-        
     echo("</div>"); /*CERRAMOS EL DIV id="tableLocations" */
+
+    if (isset($table_to_show)) {
+        if ($table_to_show == "tableMovies") echo "<script>showMovies()</script>";
+        if ($table_to_show == "tablePlaces") echo "<script>showPlaces()</script>";
+        if ($table_to_show == "tableLocations") echo "<script>showLocations()</script>";
+    }
     // ---- CREO EL DIV DONDE IRÁ LA TABLA DE LUGARES -----------------------------------//
 
 

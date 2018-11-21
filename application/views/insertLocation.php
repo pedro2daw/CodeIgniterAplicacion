@@ -8,7 +8,7 @@ echo("
         echo form_open_multipart('Locations/insertLocation');
         echo ("<div class='form-group'>");
             echo "Nombre"."<br>".
-                form_input('nombre', '', 'required class="form-control" placeholder="Introduce tu nombre"');
+                form_input('nombre', '', 'required class="form-control" placeholder="Introduce el nombre"');
         echo ("</div>");
 
         echo ("<div class='form-group'>");
@@ -18,7 +18,7 @@ echo("
 
         echo ("<div class='form-group'>");
             echo "Fotografía"."<br>".
-                form_upload('imagen','imagen','required class="form-control-file"');
+                form_upload('imagen','imagen','required class="form-control"');
         echo("</div>");
 
         echo ("<div class='form-group'>");
@@ -32,8 +32,9 @@ echo("
         echo("</div>");
             echo "<br>".
                 form_submit('submit', 'Insertar','class="btn btn-success"');
+                echo("<input type='reset' class='btn btn-danger' value='Borrar datos'/>");
         echo form_close();
-        echo "<br><br><br><br>";
+        echo "<br><br><br>";
 
         echo anchor('Users/panelAdministracion', 'Volver al panel de administracion', 'class="btn btn-info"');
 ?>

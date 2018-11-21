@@ -1,14 +1,14 @@
 <?php 
 class modelLocalizaciones extends CI_Model{
 
-// ------- OBTENGO TODAS LAS PELICULAS DE LA BASE DE DATOS -------------------- //
+// ------- OBTENGO TODOS LOS DATOS DE LOCALIZACIONES, COMO DE LUGAR Y PELICULAS  -------------------- //
     public function getAll(){
         $query = $this->db->query("SELECT localizaciones.id, localizaciones.nombre, localizaciones.descripcion,
          localizaciones.fotografia,localizaciones.id_lugar, localizaciones.id_pelicula, peliculas.titulo AS nameMovie,
          lugares.nombre AS namePlace
         FROM localizaciones
-            INNER JOIN peliculas ON localizaciones.id_pelicula = peliculas.id
-            INNER JOIN lugares ON localizaciones.id_lugar = lugares.id;");
+            LEFT JOIN peliculas ON localizaciones.id_pelicula = peliculas.id
+            LEFT JOIN lugares ON localizaciones.id_lugar = lugares.id;");
         $data = array();
         if ($query->num_rows() > 0){
             foreach ($query->result_array() as $row){
