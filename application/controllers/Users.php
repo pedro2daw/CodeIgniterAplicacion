@@ -12,7 +12,6 @@
 
 // ------- COMPRUEBO EL LOGIN REALIZADO -------------------- //
         public function checkLogin(){
-            if($this->security_check()){
             $nombre = $this->input->get_post("nombre");
             $pass = $this->input->get_post("password");
             $this->load->model('modelUser');
@@ -26,7 +25,6 @@
                 $this->panelAdministracion(); // llamo a la funcion que me mostrará las tablas de la BD
             }   
         }
-    }
 // ------- COMPRUEBO EL LOGIN REALIZADO -------------------- //
 
 // ****************************************************************//
