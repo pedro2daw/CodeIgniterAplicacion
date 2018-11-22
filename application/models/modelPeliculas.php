@@ -105,6 +105,7 @@ class modelPeliculas extends CI_Model{
             }
         }
         return array_column($data,'titulo','id_movie'); // obtenemos un array con los datos de la consulta, una columna que es el titulo y el id funciona como indice
+        // se obtiene una tabla de 2 columnas, una columna con los titulos y la otra columna con los ids correspondientes
     }
 // --------- OBTENGO EL NOMBRE E ID DE LA PELICULA PARA INSERT LOCALIZACIONES -------//
 
