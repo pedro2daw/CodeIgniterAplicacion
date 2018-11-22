@@ -6,7 +6,6 @@ echo ("<div class='col'>");
     echo("<input type='button' class='btn btn-info' value='Peliculas' onclick='showMovies();'/>");
     echo("<input type='button' class='btn btn-danger tableButtons' value='Lugares' onclick='showPlaces();'/>");
     echo("<input type='button' class='btn btn-warning tableButtons' value='Localizaciones' onclick='showLocations();'/>");
-    //class="form-control form-control-md"///
     echo ("<a href='".site_url('Users/cerrarSesion')."' id='logout' class='btn btn-danger'>Cerrar sesion</a>");
 echo ("</div>");
 echo ("</div>");
