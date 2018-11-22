@@ -1,10 +1,10 @@
-<div class="container-fluid" id="updateMovie"> 
+<div class="container-fluid"> 
     <div class="row">
     <div class="col-md-4"></div> 
          <div class="col-md-4">
 <?php
 echo("
-        <h3 class='text-center'>Formulario de modificacion de PELICULAS</h3>");
+        <h4 class='text-center'>Formulario de modificacion de peliculas</h4>");
         echo form_open('Movies/updateMovie');  // ESTA LINEA SUSTITUYE A LA PRIMERA NORMAL DE UN FORM  
         echo ("<div class='form-group'>");
             echo("Título:</br>

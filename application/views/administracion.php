@@ -3,9 +3,10 @@
     //-----CREO LOS BOTONES PARA OCULTAR-MOSTRAR LAS TABLAS DE ADMINISTRACION DE LA BD--------//
 echo("<div class='row' id='flex'>");
 echo ("<div class='col'>");
-    echo("<input type='button' class='btn btn-info' value='Peliculas' onclick='showMovies();'/>");//' onclick='showTable(\"tableUser\");'/>");
-    echo("<input type='button' class='btn btn-danger tableButtons' value='Lugares' onclick='showPlaces();'/>"); //onclick='showTable(\"tableRol\");'/>");
-    echo("<input type='button' class='btn btn-warning tableButtons' value='Localizaciones' onclick='showLocations();'/>");// onclick='showTable(\"tablePermis\");'/>");
+    echo("<input type='button' class='btn btn-info' value='Peliculas' onclick='showMovies();'/>");
+    echo("<input type='button' class='btn btn-danger tableButtons' value='Lugares' onclick='showPlaces();'/>");
+    echo("<input type='button' class='btn btn-warning tableButtons' value='Localizaciones' onclick='showLocations();'/>");
+    //class="form-control form-control-md"///
     echo ("<a href='".site_url('Users/cerrarSesion')."' id='logout' class='btn btn-danger'>Cerrar sesion</a>");
 echo ("</div>");
 echo ("</div>");
@@ -95,23 +96,11 @@ echo ("</div>");
         
         echo anchor('Locations/showInsertar','Insertar Localizacion', 'class="btn btn-success"');// crea el enlace completo <a href>
     echo("</div>"); /*CERRAMOS EL DIV id="tableLocations" */
+    // ---- CREO EL DIV DONDE IRÁ LA TABLA DE LOCALIZACIONES -----------------------------------//
 
     if (isset($table_to_show)) {
         if ($table_to_show == "tableMovies") echo "<script>showMovies()</script>";
         if ($table_to_show == "tablePlaces") echo "<script>showPlaces()</script>";
         if ($table_to_show == "tableLocations") echo "<script>showLocations()</script>";
     }
-    // ---- CREO EL DIV DONDE IRÁ LA TABLA DE LUGARES -----------------------------------//
-
-
-
-
-
-
-
-
-
-
-    
-
 ?>

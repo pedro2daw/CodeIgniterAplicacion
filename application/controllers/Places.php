@@ -38,6 +38,7 @@
                     $data["table_to_show"] = "tablePlaces";
                     $this->load->view('template',$data);
                 }else{
+                    echo("<h3>Lugar insertado con éxito</h3>");
                     $data["listaPeliculas"] = $this->modelPeliculas->getAll();
                     $data["listaLugares"] = $this->modelLugares->getAll();
                     $data["listaLocalizaciones"] = $this->modelLocalizaciones->getAll();
@@ -103,7 +104,8 @@
                         $data["nombreVista"] = "administracion";
                         $data["table_to_show"] = "tablePlaces";
                         $this->load->view('template',$data);
-                    }else{                       
+                    }else{
+                        echo("<h3>Lugar modificado con éxito</h3>");                       
                         $data["listaPeliculas"] = $this->modelPeliculas->getAll();
                         $data["listaLugares"] = $this->modelLugares->getAll();
                         $data["listaLocalizaciones"] = $this->modelLocalizaciones->getAll();

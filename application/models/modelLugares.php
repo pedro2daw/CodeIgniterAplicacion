@@ -40,11 +40,6 @@ class modelLugares extends CI_Model{
     public function deletePlace($id){
         $this->db->query("DELETE FROM lugares WHERE id='$id';");
 
-        /*$query = $this->db->query("SELECT fotografia FROM localizaciones WHERE id_lugar='$id'");
-        $fileToDelete = implode($query->result_array()[0]);
-        unlink($fileToDelete);
-        $this->db->query("DELETE FROM localizaciones WHERE id_pelicula='$id'");
-*/
         return $this->db->affected_rows();
     }
 // ------------- REALIZO LA ELIMINACION DE LOS LUGARES ----------------------//

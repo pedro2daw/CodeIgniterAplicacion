@@ -25,11 +25,11 @@
 // ------------- REALIZO LA INSERCION DE LOCALIZACIONES --------------------------- //
         public function insertLocation(){
             if($this->security_check()){
-                $img_name = $this->modelLocalizaciones->checkUpload();
                 $nombre = $this->input->get_post("nombre");
                 $descripcion = $this->input->get_post("descripcion");
                 $lugar = $this->input->get_post("lugar");
                 $pelicula = $this->input->get_post("pelicula");
+                $img_name = $this->modelLocalizaciones->checkUpload($nombre);
                 $imagen = "assets/img/".$img_name;
                     
                 $resultado = $this->modelLocalizaciones->insertLocation($nombre,$descripcion,$lugar,$pelicula,$imagen);
@@ -96,18 +96,18 @@
                 $id = $this->input->get_post("id");
                 $nombre = $this->input->get_post("nombre");
                 $descripcion = $this->input->get_post("descripcion");
-                $fotografia = $this->input->get_post("ruta");
                 $lugar = $this->input->get_post("lugar");
                 $pelicula = $this->input->get_post("pelicula");
 
-                $resultado = $this->modelLocalizaciones->updateLocation($id,$nombre,$descripcion,$fotografia,$lugar,$pelicula);
+                $resultado = $this->modelLocalizaciones->updateLocation($id,$nombre,$descripcion,$lugar,$pelicula);
 
                     if ($resultado == 0){
                         echo("<h3>Error al modificar la localizacion</h3>");
                         $data["nombreVista"] = "administracion";
                         $data["table_to_show"] = "tableLocations";
                         $this->load->view('template',$data);
-                    }else{                       
+                    }else{              
+                        echo("<h3>Localización modificada con éxito</h3>");         
                         $data["listaPeliculas"] = $this->modelPeliculas->getAll();
                         $data["listaLugares"] = $this->modelLugares->getAll();
                         $data["listaLocalizaciones"] = $this->modelLocalizaciones->getAll();

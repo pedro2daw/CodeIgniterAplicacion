@@ -43,13 +43,13 @@ class modelLocalizaciones extends CI_Model{
 // ****************************************************************************//
 
 // ------------- COMPRUEBO LA SUBIDA DE LA IMAGEN -----------------------------//
-    public function checkUpload(){
+    public function checkUpload($nombre){
         $config['upload_path'] = './assets/img';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = 1000;
         $config['max_width'] = 1024;
         $config['max_height'] = 768;
-        //$config['file_name'] = $this->input->get_post("titulo");
+        $config['file_name'] = $nombre;
 
             $this->load->library('upload', $config);
 
@@ -84,12 +84,11 @@ class modelLocalizaciones extends CI_Model{
 // ****************************************************************************//
 
 // --------- REALIZO LA MODIFICACION DE LAS PELICULAS ----------------------//
-    public function updateLocation($id,$nombre,$descripcion,$fotografia,$lugar,$pelicula){
+    public function updateLocation($id,$nombre,$descripcion,$lugar,$pelicula){
         $this->db->query("UPDATE localizaciones
          SET        
             nombre = '$nombre',
             descripcion = '$descripcion',
-            fotografia = '$fotografia',
             id_lugar = '$lugar',
             id_pelicula = '$pelicula'
             WHERE id = $id
@@ -98,5 +97,6 @@ class modelLocalizaciones extends CI_Model{
         return $this->db->affected_rows();
     }
 // --------- REALIZO LA MODIFICACION DE LAS PELICULAS ----------------------//
+
 
 }// CIERRO LA CLASS modelLocalizaciones

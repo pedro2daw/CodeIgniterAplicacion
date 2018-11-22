@@ -15,3 +15,9 @@ function showLocations(){
     document.getElementById("tablePlaces").style.display="none";
     document.getElementById("tableLocations").style.display="block";
 }
+
+function showBackUp(){
+    document.getElementById("tableMovies").style.display="none";
+    document.getElementById("tablePlaces").style.display="none";
+    document.getElementById("tableLocations").style.display="none";
+}

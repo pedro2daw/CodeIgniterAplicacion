@@ -1,4 +1,4 @@
-<div class="container-fluid" id="insertLocation"> 
+<div class="container-fluid"> 
     <div class="row">
     <div class="col-md-4"></div> 
          <div class="col-md-4">
@@ -23,12 +23,12 @@ echo("
 
         echo ("<div class='form-group'>");
             echo "Lugar"."<br>".
-                form_dropdown('lugar', $namePlace, 'class="form-control form-control-lg"');
+                form_dropdown('lugar', $namePlace,'', 'class="form-control form-control-md"');
         echo("</div>");
 
         echo ("<div class='form-group'>");
             echo "Pelicula"."<br>".
-                form_dropdown('pelicula', $nameMovie,'class="form-control form-control-lg"');
+                form_dropdown('pelicula', $nameMovie,'','class="form-control form-control-md"');
         echo("</div>");
             echo "<br>".
                 form_submit('submit', 'Insertar','class="btn btn-success"');

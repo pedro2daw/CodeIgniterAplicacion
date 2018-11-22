@@ -44,14 +44,7 @@ class modelPeliculas extends CI_Model{
         unlink($fileToDelete);
 
         $this->db->query("DELETE FROM peliculas WHERE id='$id';");
-
-        /*
-        $query_two = $this->db->query("SELECT fotografia FROM localizaciones WHERE id_pelicula='$id'");
-           if ($query_two->result_array()[0] != NULL){
-                $fileToDelete_two = implode($query_two->result_array()[0]);
-                unlink($fileToDelete_two);
-                $this->db->query("DELETE FROM localizaciones WHERE id_pelicula='$id'");
-            }*/
+        
         return $this->db->affected_rows();
     }
 // ------------- REALIZO LA ELIMINACION DE LAS PELICULAS ----------------------//
